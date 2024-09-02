@@ -156,3 +156,10 @@ export PATH=/Users/kennysheldon/bin:$PATH
 
 alias oo="cd /Users/kennysheldon/Library/Mobile Documents/iCloud~md~obsidian/Documents/Kennys Vault/Kennys Notes"
 alias or="vim /Users/kennysheldon/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Kennys\ Vault/Kennys\ Notes/inbox/*.md"
+
+# bun completions
+[ -s "/Users/kennysheldon/.bun/_bun" ] && source "/Users/kennysheldon/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

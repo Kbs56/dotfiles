@@ -11,6 +11,8 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.8
 config.macos_window_background_blur = 30
 
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+
 config.colors = {
   foreground = "#CBE0F0",
   background = "#011423",
