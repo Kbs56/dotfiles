@@ -163,3 +163,7 @@ alias or="vim /Users/kennysheldon/Library/Mobile\ Documents/iCloud~md~obsidian/D
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# ----- Bat (better cat) -----
+export BAT_THEME=tokyonight_night
+alias cat="bat"
