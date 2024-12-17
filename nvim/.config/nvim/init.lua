@@ -19,7 +19,7 @@ require('lazy').setup("plugins")
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
-vim.opt.conceallevel = 2
+-- vim.opt.conceallevel = 2
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -41,7 +41,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "110"
 
 -- Set highlight on search
 vim.o.hlsearch = false
