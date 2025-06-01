@@ -168,3 +168,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export BAT_THEME=tokyonight_night
 alias cat="bat"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
