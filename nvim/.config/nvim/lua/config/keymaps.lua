@@ -70,6 +70,8 @@ vim.keymap.set(
 	':Telescope live_grep search_dirs={"/Users/kennysheldon/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kennys\\ Vault/Kennys\\ Notes"}<cr>'
 )
 
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
