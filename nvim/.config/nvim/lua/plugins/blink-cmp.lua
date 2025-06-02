@@ -38,6 +38,9 @@ return {
 			menu = {
 				border = "rounded",
 			},
+			ghost_text = {
+				enabled = true,
+			},
 			documentation = {
 				auto_show = true,
 				window = { border = "rounded", desired_min_width = 30 },
