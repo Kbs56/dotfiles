@@ -170,3 +170,5 @@ alias cat="bat"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
+
+alias lg="lazygit"
