@@ -112,6 +112,10 @@ alias gpull="git pull"
 alias gpush="git push"
 alias gs="git status"
 alias k="kubectl"
+alias dcu="docker compose up"
+
+alias ..="cd .."
+alias ...="cd ../.."
 
 # pnpm
 export PNPM_HOME="/Users/kennysheldon/Library/pnpm"
@@ -168,3 +172,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export BAT_THEME=tokyonight_night
 alias cat="bat"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+
+alias lg="lazygit"
+export PATH="$HOME/.local/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
