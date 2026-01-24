@@ -182,7 +182,6 @@ return {
 		local servers = {
 			bashls = {},
 			marksman = {},
-			ts_ls = {},
 			gopls = {},
 			-- clangd = {},
 			-- pyright = {},
