@@ -178,6 +178,8 @@ export NVM_DIR="$HOME/.nvm"
 alias lg="lazygit"
 export PATH="$HOME/.local/bin:$PATH"
 
+alias oc="opencode"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
