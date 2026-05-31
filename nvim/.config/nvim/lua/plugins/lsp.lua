@@ -170,6 +170,14 @@ return {
 		local original_capbilities = vim.lsp.protocol.make_client_capabilities()
 		local capabilities = require("blink.cmp").get_lsp_capabilities(original_capbilities)
 
+		local tsgo_capabilities = vim.deepcopy(capabilities)
+		tsgo_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+
+		vim.lsp.config("tsgo", {
+			capabilities = tsgo_capabilities,
+		})
+		vim.lsp.enable("tsgo")
+
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 		--
