@@ -6,6 +6,9 @@ return {
 	config = function()
 		local parsers = {
 			"c",
+			"eex",
+			"elixir",
+			"heex",
 			"lua",
 			"vim",
 			"vimdoc",
@@ -20,10 +23,14 @@ return {
 			ensure_installed = parsers,
 		})
 
+		local filetypes = vim.list_extend(vim.deepcopy(parsers), {
+			"eelixir",
+		})
+
 		local ft = vim.api.nvim_create_autocmd
 
 		ft("FileType", {
-			pattern = parsers,
+			pattern = filetypes,
 			callback = function()
 				vim.treesitter.start()
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
