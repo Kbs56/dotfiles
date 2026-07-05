@@ -59,15 +59,24 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr><cr>")
 
 -- search for files in full vault
+local obsidian_notes =
+	"/Users/kennysheldon/Library/Mobile Documents/iCloud~md~obsidian/Documents/Kennys Vault/Kennys Notes"
+
 vim.keymap.set(
 	"n",
 	"<leader>os",
-	':Telescope find_files search_dirs={"/Users/kennysheldon/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kennys\\ Vault/Kennys\\ Notes"}<cr>'
+	function()
+		require("fff").find_files_in_dir(obsidian_notes)
+	end,
+	{ desc = "Search Obsidian notes" }
 )
 vim.keymap.set(
 	"n",
 	"<leader>oz",
-	':Telescope live_grep search_dirs={"/Users/kennysheldon/Library/Mobile\\ Documents/iCloud~md~obsidian/Documents/Kennys\\ Vault/Kennys\\ Notes"}<cr>'
+	function()
+		require("fff").live_grep({ cwd = obsidian_notes })
+	end,
+	{ desc = "Grep Obsidian notes" }
 )
 
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })

@@ -14,6 +14,7 @@ return {
 			gitbrowse = { enabled = true },
 			indent = { enabled = true },
 			input = { enabled = true },
+			picker = {},
 			notifier = {
 				enabled = true,
 				timeout = 3000,
@@ -192,4 +193,3 @@ return {
 		},
 	},
 }
-
