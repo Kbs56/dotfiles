@@ -8,6 +8,7 @@ return {
 			"c",
 			"eex",
 			"elixir",
+			"gleam",
 			"heex",
 			"lua",
 			"vim",
@@ -32,7 +33,9 @@ return {
 		ft("FileType", {
 			pattern = filetypes,
 			callback = function()
-				vim.treesitter.start()
+				if not pcall(vim.treesitter.start) then
+					return
+				end
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 			end,
 		})

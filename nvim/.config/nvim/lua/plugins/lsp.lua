@@ -191,6 +191,11 @@ return {
 		local tsgo_capabilities = vim.deepcopy(capabilities)
 		tsgo_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 
+		vim.lsp.config("gleam", {
+			capabilities = capabilities,
+		})
+		vim.lsp.enable("gleam")
+
 		vim.lsp.config("tsgo", {
 			capabilities = tsgo_capabilities,
 		})
