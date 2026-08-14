@@ -13,6 +13,9 @@ focus_pane_right = "prefix+l"
 split_vertical = ["prefix+v", "prefix+%"]
 split_horizontal = ["prefix+minus", "prefix+\""]
 
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
+
 [[keys.command]]
 key = "ctrl+h"
 type = "plugin_action"
