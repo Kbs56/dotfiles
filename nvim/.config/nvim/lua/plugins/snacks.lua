@@ -84,18 +84,18 @@ return {
 				desc = "[N]otifications [D]ismiss",
 			},
 			{
-				"<leader>ln",
+				"<leader>tn",
 				function()
 					Snacks.toggle.option("relativenumber", { name = "Relative Number" }):toggle()
 				end,
-				desc = "Toggle Relative [L]ine [N]umbers",
+				desc = "[T]oggle Relative [N]umbers",
 			},
 			{
-				"<leader>cl",
+				"<leader>tl",
 				function()
 					Snacks.toggle.option("cursorline", { name = "Cursor Line" }):toggle()
 				end,
-				desc = "Toggle [C]ursor [L]ine",
+				desc = "[T]oggle Cursor [L]ine",
 			},
 			{
 				"<leader>td",
@@ -105,11 +105,11 @@ return {
 				desc = "[T]oggle [D]iagnostics",
 			},
 			{
-				"<leader>zm",
+				"<leader>tm",
 				function()
 					Snacks.toggle.dim():toggle()
 				end,
-				desc = "Toggle Dim Mode",
+				desc = "[T]oggle Di[m] Mode",
 			},
 			{
 				"<leader>tw",
@@ -137,26 +137,7 @@ return {
 				desc = "Toggle [T]reesitter Conte[x]t",
 			},
 			{
-				"<leader>ih",
-				function()
-					Snacks.toggle({
-						name = "Inlay Hints",
-						get = function()
-							return vim.lsp.inlay_hint.is_enabled()
-						end,
-						set = function(state)
-							if state then
-								vim.lsp.inlay_hint.enable(true)
-							else
-								vim.lsp.inlay_hint.enable(false)
-							end
-						end,
-					}):toggle()
-				end,
-				desc = "Toggle [I]nlay [H]ints",
-			},
-			{
-				"<leader>hl",
+				"<leader>tc",
 				function()
 					local hc = require("nvim-highlight-colors")
 					Snacks.toggle({
@@ -173,7 +154,7 @@ return {
 						end,
 					}):toggle()
 				end,
-				desc = "Toggle [H]igh[L]ight Colors",
+				desc = "[T]oggle Highlight [C]olors",
 			},
 			{
 				"<leader>.",
@@ -183,7 +164,7 @@ return {
 				desc = "Toggle Scratch Buffer",
 			},
 			{
-				"<leader>s.",
+				"<leader>S",
 				function()
 					Snacks.scratch.select()
 				end,

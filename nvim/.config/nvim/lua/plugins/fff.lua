@@ -9,21 +9,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>pf",
-			function()
-				require("fff").find_files()
-			end,
-			desc = "Find files",
-		},
-		{
 			"<C-p>",
-			function()
-				require("fff").find_files()
-			end,
-			desc = "Find files",
-		},
-		{
-			"<leader>ff",
 			function()
 				require("fff").find_files()
 			end,

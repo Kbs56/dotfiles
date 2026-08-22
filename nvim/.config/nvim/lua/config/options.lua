@@ -32,6 +32,7 @@ vim.wo.number = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+vim.opt.mousescroll = "ver:1,hor:2"
 
 --  Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.

@@ -16,6 +16,13 @@ return {
 		"saghen/blink.cmp",
 	},
 	config = function()
+		-- Replace Neovim's default gr-prefixed LSP mappings with shorter mappings below.
+		vim.keymap.del("n", "grn")
+		vim.keymap.del({ "n", "x" }, "gra")
+		vim.keymap.del("n", "grr")
+		vim.keymap.del("n", "gri")
+		vim.keymap.del("n", "grt")
+
 		--  This function gets run when an LSP attaches to a particular buffer.
 		--    That is to say, every time a new file is opened that is associated with
 		--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -35,7 +42,7 @@ return {
 
 				-- Rename the variable under your cursor.
 				--  Most Language Servers support renaming across files, etc.
-				map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("<leader>r", vim.lsp.buf.rename, "Rename")
 
 				map("K", function()
 					vim.lsp.buf.hover({ border = "rounded" })
@@ -43,18 +50,18 @@ return {
 
 				-- Execute a code action, usually your cursor needs to be on top of an error
 				-- or a suggestion from your LSP for this to activate.
-				map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
+				map("ga", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
 
 				-- Find references for the word under your cursor.
-				map("grr", function()
+				map("gr", function()
 					Snacks.picker.lsp_references()
-				end, "[G]oto [R]eferences")
+				end, "Goto References")
 
 				-- Jump to the implementation of the word under your cursor.
 				--  Useful when your language has ways of declaring types without an actual implementation.
-				map("gri", function()
+				map("gI", function()
 					Snacks.picker.lsp_implementations()
-				end, "[G]oto [I]mplementation")
+				end, "Goto Implementation")
 
 				-- Jump to the definition of the word under your cursor.
 				--  This is where a variable was first declared, or where a function is defined, etc.
@@ -65,9 +72,9 @@ return {
 
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header.
-				map("grD", function()
+				map("gD", function()
 					Snacks.picker.lsp_declarations()
-				end, "[G]oto [D]eclaration")
+				end, "Goto Declaration")
 
 				-- Fuzzy find all the symbols in your current document.
 				--  Symbols are things like variables, functions, types, etc.
@@ -84,9 +91,9 @@ return {
 				-- Jump to the type of the word under your cursor.
 				--  Useful when you're not sure what type a variable is and you want to see
 				--  the definition of its *type*, not where it was *defined*.
-				map("grt", function()
+				map("gy", function()
 					Snacks.picker.lsp_type_definitions()
-				end, "[G]oto [T]ype Definition")
+				end, "Goto Type Definition")
 
 				-- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
 				---@param client vim.lsp.Client
