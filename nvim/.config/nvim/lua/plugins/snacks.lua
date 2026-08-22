@@ -23,7 +23,7 @@ return {
 			rename = { enabled = true },
 			toggle = { enabled = true },
 			scratch = { enabled = true },
-			statuscolumn = { enabled = false }, -- Disabled to avoid conflict with mini.statusline
+			statuscolumn = { enabled = false }, -- Use Neovim's native sign column.
 			words = { enabled = true },
 		},
 
