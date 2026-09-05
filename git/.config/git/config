@@ -1,0 +1,11 @@
+[core]
+	pager = hunk pager
+
+[diff]
+	tool = hunk
+
+[difftool "hunk"]
+	cmd = hunk difftool \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+[difftool]
+	prompt = false
