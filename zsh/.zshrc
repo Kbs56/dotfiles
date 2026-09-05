@@ -134,8 +134,26 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+function zvm_config() {
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_ZLE
+  ZVM_KEYTIMEOUT=0.1
+  ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+  ZVM_VI_HIGHLIGHT_FOREGROUND=default
+  ZVM_VI_HIGHLIGHT_BACKGROUND=default
+  ZVM_VI_HIGHLIGHT_EXTRASTYLE=standout
+}
+
+function zvm_after_init() {
+  bindkey -M viins '^[[A' history-search-backward
+  bindkey -M viins '^[[B' history-search-forward
+}
+
+source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # history setup
@@ -146,10 +164,6 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
-
-# completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
 
 alias ls="eza --icons --long --all --git --no-permissions"
 
@@ -179,6 +193,8 @@ alias lg="lazygit"
 export PATH="$HOME/.local/bin:$PATH"
 
 alias oc="opencode"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
