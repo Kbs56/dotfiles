@@ -202,3 +202,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Added by the Hunk installer (https://hunk.dev)
 export PATH='/Users/kennysheldon/.hunk/bin':"$PATH"
+
+# opencode
+export PATH=/Users/kennysheldon/.opencode/bin:$PATH
