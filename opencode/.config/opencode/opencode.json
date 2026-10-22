@@ -1,4 +1,19 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "plan"
+  "default_agent": "plan",
+  "mcp": {
+    "servers": {
+      "paper": {
+        "type": "local",
+        "command": [
+          "/Users/kennysheldon/.paper/bin/paper",
+          "mcp"
+        ]
+      },
+      "superlogical": {
+        "type": "remote",
+        "url": "https://www.superlogical.com/rex/community-mcp"
+      }
+    }
+  }
 }

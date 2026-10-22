@@ -195,18 +195,16 @@ return {
 		local original_capbilities = vim.lsp.protocol.make_client_capabilities()
 		local capabilities = require("blink.cmp").get_lsp_capabilities(original_capbilities)
 
-		local tsgo_capabilities = vim.deepcopy(capabilities)
-		tsgo_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
-
 		vim.lsp.config("gleam", {
 			capabilities = capabilities,
 		})
 		vim.lsp.enable("gleam")
 
-		vim.lsp.config("tsgo", {
-			capabilities = tsgo_capabilities,
+		-- Use tsserver for projects on TypeScript < 7; tsc/tsgo require the native compiler.
+		vim.lsp.config("ts_ls", {
+			capabilities = capabilities,
 		})
-		vim.lsp.enable("tsgo")
+		vim.lsp.enable("ts_ls")
 
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -221,6 +219,7 @@ return {
 			bashls = {},
 			marksman = {},
 			gopls = {},
+			ts_ls = {},
 			-- clangd = {},
 			-- pyright = {},
 			-- rust_analyzer = {},
@@ -229,8 +228,7 @@ return {
 			-- Some languages (like typescript) have entire language plugins that can be useful:
 			--    https://github.com/pmizio/typescript-tools.nvim
 			--
-			-- But for many setups, the LSP (`ts_ls`) will work just fine
-			-- ts_ls = {},
+			-- This setup uses the LSP (`ts_ls`) configured above.
 			--
 
 			lua_ls = {
@@ -273,7 +271,7 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
 			automatic_enable = {
-				exclude = { "elixirls" },
+				exclude = { "elixirls", "tsc", "tsgo" },
 			},
 			automatic_installation = false,
 			handlers = {
